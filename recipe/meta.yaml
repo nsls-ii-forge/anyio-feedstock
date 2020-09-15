@@ -23,6 +23,7 @@ requirements:
   run:
     - python
     - curio
+    - dataclasses  # [py<37]
     - sniffio
     - trio
     # CF runs the build on Python 3.8+, and the importing test imports things
