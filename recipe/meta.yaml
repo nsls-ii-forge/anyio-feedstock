@@ -13,22 +13,22 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  noarch: python
+  skip: true  # [py<36]
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
     - setuptools_scm
   run:
-    - python >=3.6
+    - python
     - curio
     - sniffio
     - trio
     # CF runs the build on Python 3.8+, and the importing test imports things
     # from "typing". We need a backport package "typing-extensions" to run the
     # build/test successfully on 3.7 and older.
-    - typing-extensions
+    - typing-extensions  # [py<38]
 
 test:
   imports:
