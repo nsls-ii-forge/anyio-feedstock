@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
 requirements:
@@ -25,6 +25,10 @@ requirements:
     - curio
     - sniffio
     - trio
+    # CF runs the build on Python 3.8+, and the importing test imports things
+    # from "typing". We need a backport package "typing-extensions" to run the
+    # build/test successfully on 3.7 and older.
+    - typing-extensions
 
 test:
   imports:
