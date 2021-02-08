@@ -1,6 +1,6 @@
 {% set name = "anyio" %}
-{% set version = "2.0.2" %}
-{% set sha256 = "35075abd32cf20fd7e0be2fee3614e80b92d5392eba257c8d2f33de3df7ca237" %}
+{% set version = "2.1.0" %}
+{% set sha256 = "8a56e08623dc55955a06719d4ad62de6009bb3f1dd04936e60b2104dd58da484" %}
 
 package:
   name: {{ name|lower }}
